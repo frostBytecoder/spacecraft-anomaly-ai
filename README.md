@@ -12,3 +12,6 @@ This project detects anomalies in spacecraft telemetry using AI.
 ```bash
 pip install numpy
 python src/model.py
+## 🧠 AI Model Used
+- Isolation Forest (Machine Learning)
+- Detects anomalies in telemetry data automatically
