@@ -4,4 +4,4 @@ torch
 streamlit
 scikit-learn
 torch
-numpy
+plotly
