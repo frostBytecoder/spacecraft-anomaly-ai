@@ -1,21 +1,54 @@
-# 🚀 Spacecraft Anomaly Detection AI
+# 🚀 AI-Based Spacecraft Anomaly Detection System
 
-This project detects anomalies in spacecraft telemetry using AI.
+## 📌 Overview
+This project detects anomalies in spacecraft telemetry and provides autonomous decision support.
 
-## 🔍 Features
-- Detect abnormal sensor values
-- Simple anomaly detection algorithm
-- Expandable to deep learning models
+---
 
-## ▶️ How to Run
-
-```bash
-pip install numpy
-python src/model.py
-## 🧠 AI Model Used
+## 🧠 Models Used
 - Isolation Forest (Machine Learning)
-- Detects anomalies in telemetry data automatically
-## 🧠 Deep Learning Model
-- LSTM (Long Short-Term Memory)
-- Learns time-series telemetry patterns
-- Detects anomalies using reconstruction error
+- Autoencoder (Deep Learning)
+
+---
+
+## ⚙️ Features
+✔ Anomaly detection  
+✔ Risk scoring  
+✔ Autonomous decision system  
+✔ Dashboard visualization  
+
+---
+
+## 📊 Results
+- ROC-AUC: 0.94  
+- Precision: 0.91  
+- Low false alarm rate  
+
+![Confusion Matrix](results/confusion_matrix.png)
+
+---
+
+## ▶️ Run Project
+
+pip install -r requirements.txt  
+streamlit run dashboard/app.py  
+
+---
+
+## 📁 Project Structure
+
+- src/ → models  
+- dashboard/ → UI  
+- data/ → dataset  
+
+---
+
+## 🎯 Future Work
+- Transformer models  
+- Real satellite integration  
+- Autonomous spacecraft control  
+
+---
+
+## 👨‍💻 Author
+Soumya Purkait
