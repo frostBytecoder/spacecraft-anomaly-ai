@@ -26,6 +26,9 @@ This project detects anomalies in spacecraft telemetry and provides autonomous d
 
 ![Confusion Matrix](results/confusion_matrix.png)
 
+## 📈 ROC Curve
+![ROC Curve](results/roc_curve.png)
+
 ---
 
 ## ▶️ Run Project
