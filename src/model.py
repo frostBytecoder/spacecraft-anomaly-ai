@@ -1,21 +1,17 @@
-import numpy as np
 from sklearn.ensemble import IsolationForest
+import pandas as pd
 
-# Example telemetry data (sensor values)
-data = np.array([10, 12, 11, 13, 50, 12, 11]).reshape(-1, 1)
+def train_model(data):
+    model = IsolationForest(contamination=0.2)
+    model.fit(data)
+    return model
 
-# Train model
-model = IsolationForest(contamination=0.2)
-model.fit(data)
+def predict(model, data):
+    return model.predict(data)
 
-# Predict anomalies
-predictions = model.predict(data)
+if __name__ == "__main__":
+    df = pd.read_csv("data/sample_data.csv")
+    model = train_model(df)
+    predictions = predict(model, df)
 
-print("Telemetry:", data.flatten())
-
-print("Anomaly Detection Results:")
-for i, val in enumerate(data):
-    if predictions[i] == -1:
-        print(val[0], "-> Anomaly 🚨")
-    else:
-        print(val[0], "-> Normal ✅")
+    print("Predictions:", predictions)
