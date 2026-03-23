@@ -15,3 +15,7 @@ python src/model.py
 ## 🧠 AI Model Used
 - Isolation Forest (Machine Learning)
 - Detects anomalies in telemetry data automatically
+## 🧠 Deep Learning Model
+- LSTM (Long Short-Term Memory)
+- Learns time-series telemetry patterns
+- Detects anomalies using reconstruction error
