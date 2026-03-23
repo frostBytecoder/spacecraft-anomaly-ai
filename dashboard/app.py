@@ -7,7 +7,7 @@ from sklearn.ensemble import IsolationForest
 st.title("🚀 Spacecraft Health Monitoring Dashboard")
 
 # Sample telemetry data
-data = np.array([10, 12, 11, 13, 50, 12, 11])
+data = np.random.randint(10, 50, size=50)
 
 df = pd.DataFrame(data, columns=["Sensor Value"])
 
