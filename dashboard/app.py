@@ -1,36 +1,23 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
 import plotly.express as px
 from sklearn.ensemble import IsolationForest
 
-st.title("🚀 Spacecraft Health Monitoring Dashboard")
+st.title("🚀 Spacecraft Mission Control Dashboard")
 
-# Sample telemetry data
-data = np.random.randint(10, 50, size=50)
+df = pd.read_csv("data/sample_data.csv")
 
-df = pd.DataFrame(data, columns=["Sensor Value"])
-
-# Train anomaly model
 model = IsolationForest(contamination=0.2)
-model.fit(df)
+df["Anomaly"] = model.fit_predict(df)
 
-df["Anomaly"] = model.predict(df)
-
-# Plot graph
-fig = px.line(df, y="Sensor Value", title="Telemetry Data")
+fig = px.line(df, y="sensor", title="Telemetry Data")
 st.plotly_chart(fig)
 
-# Show anomalies
-st.subheader("Anomaly Detection")
+st.subheader("Anomaly Alerts")
+
 for i, row in df.iterrows():
     if row["Anomaly"] == -1:
-        st.write(f"🚨 Anomaly detected at value {row['Sensor Value']}")
+        st.error(f"🚨 Anomaly at {row['sensor']}")
 
-# Risk level
-if -1 in df["Anomaly"].values:
-    risk = "WARNING ⚠️"
-else:
-    risk = "NORMAL ✅"
-
-st.metric("Current Risk Level", risk)
+risk = "CRITICAL 🚨" if -1 in df["Anomaly"].values else "NORMAL ✅"
+st.metric("Risk Level", risk)
